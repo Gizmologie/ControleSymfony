@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="example-wrapper">
+    {%  for category in categories %}
+        <div class="col-sm-4">
+            <a href="
+            {{ url('gif.index', {slug: category.slug}) }}"
+            >
+                <img src="{{ asset('gif/' ~ category.source) }}">
+
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

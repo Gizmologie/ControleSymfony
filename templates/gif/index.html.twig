@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div>
+
+    </div>
+    <p>{{ gif.category.parent.name }}</p>
+    <p>{{ gif.category.name }}</p>
+
+    <h1>{{ gif.slug }}</h1>
+
+
+
+    <img src="{{ asset('gif/' ~ gif.source) }}">
+
+
+{% endblock %}
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <p><a href="{{ path('profile.homepage.form') }}" class="btn btn-primary">Ajouter</a></p>
+    <table class="table table-striped">
+        <tr>
+            <th>Images</th>
+            <th>Categorie</th>
+            <th>Sous-categorie</th>
+            <th></th>
+        </tr>
+        {% for gif in gifs %}
+            <tr>
+                <td>
+                    <img class="img-fluid" src="{{ asset("gif/" ~ gif.source) }}" alt="un gif">
+                </td>
+                <td>{{ gif.category.parent.name | title }}</td>
+                <td>{{ gif.category.name | title }}</td>
+                <td>
+                    <a href="#" class='btn btn-warning'>Modifier</a>
+                    <a href="#" class='btn btn-danger'>Suprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
+
+

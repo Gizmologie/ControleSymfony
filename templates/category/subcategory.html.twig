@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>{{ subCategory.name }}</h1>
+
+   {%  for gif in subCategory.gifs %}
+       <div class="col-sm-4">
+           <a href="
+            {{ url('gif.index', {slug: gif.slug}) }}
+">
+               <img src="{{ asset('gif/' ~ gif.source) }}">
+
+           </a>
+       </div>
+   {% endfor %}
+{% endblock %}
+
+

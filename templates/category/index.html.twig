@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>{{ category.name }}</h1><br><br>
+    <div class="row">
+
+        {% for subCategorie in subcategories  %}
+            <div class="col-md-4 bg-dark p-3 text-center">
+                <a href="
+        {{ url('category.subcategory', {categorySlug: category.slug, subcategorySlug: subCategorie.slug}) }}"
+                   class="text-light h3"> {{ subCategorie.name }}
+                </a>
+            </div>
+        {%  endfor %}
+    </div>
+{% endblock %}
+
+
